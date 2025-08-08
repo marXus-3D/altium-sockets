@@ -21,6 +21,8 @@ const io = require("socket.io")(8800, {
       io.emit("get-users", activeUsers);
     });
   
+
+
     socket.on("disconnect", () => {
       // remove user from active users
       activeUsers = activeUsers.filter((user) => user.socketId !== socket.id);
