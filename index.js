@@ -15,6 +15,8 @@ const io = require("socket.io")(8800, {
         activeUsers.push({ userId: newUserId, socketId: socket.id });
         console.log("New User Connected", activeUsers);
       }
+
+
       // send all active users to new user
       io.emit("get-users", activeUsers);
     });
